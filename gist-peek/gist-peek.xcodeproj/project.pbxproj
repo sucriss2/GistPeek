@@ -18,6 +18,8 @@
 		8CF394912C61294F0074E83A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF394902C61294F0074E83A /* AppCoordinator.swift */; };
 		8CF394932C61297B0074E83A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF394922C61297B0074E83A /* Coordinator.swift */; };
 		8CF394952C612A3A0074E83A /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF394942C612A3A0074E83A /* ListCoordinator.swift */; };
+		8CF8996A2C614F48007F3859 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899692C614F48007F3859 /* ListViewCell.swift */; };
+		8CF8996D2C614FBC007F3859 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8996C2C614FBC007F3859 /* CodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		8CF394902C61294F0074E83A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8CF394922C61297B0074E83A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8CF394942C612A3A0074E83A /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		8CF899692C614F48007F3859 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		8CF8996C2C614FBC007F3859 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				8CF3945F2C611A810074E83A /* SceneDelegate.swift */,
 				8CF394902C61294F0074E83A /* AppCoordinator.swift */,
 				8CF394922C61297B0074E83A /* Coordinator.swift */,
+				8CF8996C2C614FBC007F3859 /* CodeView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -151,10 +156,19 @@
 		8CF3948F2C6129160074E83A /* List */ = {
 			isa = PBXGroup;
 			children = (
+				8CF8996B2C614F54007F3859 /* Views */,
 				8CF394612C611A810074E83A /* ListViewController.swift */,
 				8CF394942C612A3A0074E83A /* ListCoordinator.swift */,
 			);
 			name = List;
+			sourceTree = "<group>";
+		};
+		8CF8996B2C614F54007F3859 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CF899692C614F48007F3859 /* ListViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,9 +304,11 @@
 				8CF394912C61294F0074E83A /* AppCoordinator.swift in Sources */,
 				8CF394622C611A810074E83A /* ListViewController.swift in Sources */,
 				8CF394952C612A3A0074E83A /* ListCoordinator.swift in Sources */,
+				8CF8996A2C614F48007F3859 /* ListViewCell.swift in Sources */,
 				8CF394932C61297B0074E83A /* Coordinator.swift in Sources */,
 				8CF3945E2C611A810074E83A /* AppDelegate.swift in Sources */,
 				8CF394602C611A810074E83A /* SceneDelegate.swift in Sources */,
+				8CF8996D2C614FBC007F3859 /* CodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
