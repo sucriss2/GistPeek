@@ -24,8 +24,11 @@ final class ListCoordinator: Coordinator {
     func makeViewController() -> ListViewController {
         let controller = ListViewController()
         let model = ListViewModel()
+        let service = ListService()
         
+        model.service = service
         controller.model = model
+        
         return controller
     }
 }

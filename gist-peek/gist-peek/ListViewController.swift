@@ -38,6 +38,7 @@ class ListViewController: UIViewController {
         view.addSubview(mainView)
         configTableView()
         configConstraints()
+        model?.load()
     }
     
     // MARK: - Method(s).

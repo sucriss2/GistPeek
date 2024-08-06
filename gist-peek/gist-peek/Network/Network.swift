@@ -22,13 +22,13 @@ class Network {
         onComplete: @escaping (Result<Data, Error>) -> Void
     ) {
         guard let url = URL(string: request.baseURL + request.path) else { return }
-        print(url.absoluteString)
+        debugPrint(url.absoluteString)
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
 
         let datatask = session.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
-                print(error.localizedDescription)
+                debugPrint(error.localizedDescription)
                 onComplete(.failure(error))
                 return
             }
