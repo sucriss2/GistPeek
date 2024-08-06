@@ -15,8 +15,8 @@ struct Owner: Codable {
 #if DEBUG
 extension Owner {
     static func fixture(
-        login: String = "MariMaria",
-        avatarUrl: String? = "https://trello.com/b/KTaSOgYI/githubapi"
+        login: String = "MariMaria123",
+        avatarUrl: String? = "https://lthub.ubc.ca/files/2021/06/GitHub-Logo.png"
     ) -> Owner {
         Owner(login: login, avatarUrl: avatarUrl)
     }

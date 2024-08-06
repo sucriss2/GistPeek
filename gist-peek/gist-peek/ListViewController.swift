@@ -12,7 +12,6 @@ class ListViewController: UIViewController {
     private lazy var mainView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
         view.addSubview(tableView)
         return view
     }()
@@ -39,7 +38,7 @@ class ListViewController: UIViewController {
     private func configTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
     }
     
     private func configConstraints() {
@@ -63,8 +62,17 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Linha \(indexPath.row)"
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: ListTableViewCell.identifier, for: indexPath
+        ) as? ListTableViewCell else {
+            fatalError()
+        }
+        let repository = Repository.fixture()
+        cell.configure(model: repository)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }

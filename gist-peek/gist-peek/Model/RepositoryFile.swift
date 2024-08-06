@@ -10,3 +10,13 @@ import Foundation
 struct RepositoryFile: Codable {
     let filename: String
 }
+
+#if DEBUG
+extension RepositoryFile {
+    static func fixture(
+        filename: String = ""
+    ) -> RepositoryFile {
+        RepositoryFile(filename: filename)
+    }
+}
+#endif
