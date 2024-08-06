@@ -189,8 +189,8 @@
 			children = (
 				8CF394942C612A3A0074E83A /* ListCoordinator.swift */,
 				8CF394612C611A810074E83A /* ListViewController.swift */,
-				8CF899832C627470007F3859 /* ListViewModel.swift */,
 				8CF899692C614F48007F3859 /* ListTableViewCell.swift */,
+				8CF899832C627470007F3859 /* ListViewModel.swift */,
 				8CF899932C62BFBD007F3859 /* ListService.swift */,
 			);
 			name = List;

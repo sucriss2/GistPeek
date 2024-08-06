@@ -84,3 +84,17 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         return 80
     }
 }
+
+extension ListViewController: ListViewModelDelegate {
+    func didLoadSucess() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func didError(message: String) {
+        DispatchQueue.main.async {
+            print(message)
+        }
+    }
+}

@@ -31,11 +31,12 @@ class ListViewModel {
     // MARK: - Method(s).
     func load() {
         service?.fetchRepositories(onComplete: { [weak self] repositories in
-            self?.repositories.append(contentsOf: repositories)
+            guard let self = self else { return }
+            self.repositories.append(contentsOf: repositories)
+            self.delegate?.didLoadSucess()
             debugPrint(repositories.count)
         }, onError: { error in
-            print(error.localizedDescription)
+            self.delegate?.didError(message: error.localizedDescription)
         })
     }
-
 }

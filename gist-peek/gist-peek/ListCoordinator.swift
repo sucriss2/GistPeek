@@ -26,8 +26,9 @@ final class ListCoordinator: Coordinator {
         let model = ListViewModel()
         let service = ListService()
         
-        model.service = service
         controller.model = model
+        model.service = service
+        model.delegate = controller
         
         return controller
     }
