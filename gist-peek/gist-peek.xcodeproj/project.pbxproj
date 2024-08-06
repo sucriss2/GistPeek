@@ -27,6 +27,10 @@
 		8CF8997F2C6255A0007F3859 /* RepositoryFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8997E2C6255A0007F3859 /* RepositoryFile.swift */; };
 		8CF899812C625696007F3859 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899802C625696007F3859 /* Repositories.swift */; };
 		8CF899842C627470007F3859 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899832C627470007F3859 /* ListViewModel.swift */; };
+		8CF899872C629BFA007F3859 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899862C629BFA007F3859 /* Network.swift */; };
+		8CF899892C62A581007F3859 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899882C62A581007F3859 /* Request.swift */; };
+		8CF8998B2C62A5F0007F3859 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8998A2C62A5EF007F3859 /* Server.swift */; };
+		8CF8998D2C62A961007F3859 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8998C2C62A961007F3859 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		8CF8997E2C6255A0007F3859 /* RepositoryFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFile.swift; sourceTree = "<group>"; };
 		8CF899802C625696007F3859 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		8CF899832C627470007F3859 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		8CF899862C629BFA007F3859 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		8CF899882C62A581007F3859 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		8CF8998A2C62A5EF007F3859 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		8CF8998C2C62A961007F3859 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF3948D2C6128A40074E83A /* Sources */,
+				8CF899852C629BD3007F3859 /* Network */,
 				8CF899822C627286007F3859 /* Coordinator */,
 				8CF899712C624658007F3859 /* Model */,
 				8CF3948E2C6128F50074E83A /* Features */,
@@ -213,6 +222,17 @@
 				8CF394922C61297B0074E83A /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8CF899852C629BD3007F3859 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8CF899862C629BFA007F3859 /* Network.swift */,
+				8CF8998C2C62A961007F3859 /* NetworkError.swift */,
+				8CF899882C62A581007F3859 /* Request.swift */,
+				8CF8998A2C62A5EF007F3859 /* Server.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +372,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF899872C629BFA007F3859 /* Network.swift in Sources */,
+				8CF8998D2C62A961007F3859 /* NetworkError.swift in Sources */,
 				8CF394912C61294F0074E83A /* AppCoordinator.swift in Sources */,
 				8CF394622C611A810074E83A /* ListViewController.swift in Sources */,
 				8CF899842C627470007F3859 /* ListViewModel.swift in Sources */,
@@ -361,7 +383,9 @@
 				8CF899812C625696007F3859 /* Repositories.swift in Sources */,
 				8CF8996A2C614F48007F3859 /* ListTableViewCell.swift in Sources */,
 				8CF394932C61297B0074E83A /* Coordinator.swift in Sources */,
+				8CF8998B2C62A5F0007F3859 /* Server.swift in Sources */,
 				8CF3945E2C611A810074E83A /* AppDelegate.swift in Sources */,
+				8CF899892C62A581007F3859 /* Request.swift in Sources */,
 				8CF394602C611A810074E83A /* SceneDelegate.swift in Sources */,
 				8CF899732C624797007F3859 /* Repository.swift in Sources */,
 			);
