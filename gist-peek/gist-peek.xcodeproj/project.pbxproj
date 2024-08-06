@@ -26,6 +26,7 @@
 		8CF8997B2C624C9B007F3859 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8997A2C624C9B007F3859 /* RepositoryTests.swift */; };
 		8CF8997F2C6255A0007F3859 /* RepositoryFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8997E2C6255A0007F3859 /* RepositoryFile.swift */; };
 		8CF899812C625696007F3859 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899802C625696007F3859 /* Repositories.swift */; };
+		8CF899842C627470007F3859 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899832C627470007F3859 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		8CF8997A2C624C9B007F3859 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		8CF8997E2C6255A0007F3859 /* RepositoryFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFile.swift; sourceTree = "<group>"; };
 		8CF899802C625696007F3859 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		8CF899832C627470007F3859 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,9 +171,10 @@
 		8CF3948F2C6129160074E83A /* List */ = {
 			isa = PBXGroup;
 			children = (
-				8CF394612C611A810074E83A /* ListViewController.swift */,
-				8CF899692C614F48007F3859 /* ListTableViewCell.swift */,
 				8CF394942C612A3A0074E83A /* ListCoordinator.swift */,
+				8CF394612C611A810074E83A /* ListViewController.swift */,
+				8CF899832C627470007F3859 /* ListViewModel.swift */,
+				8CF899692C614F48007F3859 /* ListTableViewCell.swift */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			files = (
 				8CF394912C61294F0074E83A /* AppCoordinator.swift in Sources */,
 				8CF394622C611A810074E83A /* ListViewController.swift in Sources */,
+				8CF899842C627470007F3859 /* ListViewModel.swift in Sources */,
 				8CF8997F2C6255A0007F3859 /* RepositoryFile.swift in Sources */,
 				8CF394952C612A3A0074E83A /* ListCoordinator.swift in Sources */,
 				8CF899752C6247D6007F3859 /* Owner.swift in Sources */,

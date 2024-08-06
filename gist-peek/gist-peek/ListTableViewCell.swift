@@ -11,10 +11,10 @@ import Kingfisher
 class ListTableViewCell: UITableViewCell {
 
     static let identifier = "ListTableViewCell"
-
-    let photoImageView: UIImageView = {
+    
+    // MARK: - Component(s).
+    lazy var photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        imageView.image = UIImage(named: "githubIcon")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +24,6 @@ class ListTableViewCell: UITableViewCell {
     lazy var nameLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = ""
         label.textColor = .black
         label.numberOfLines = 2
         label.font = .systemFont(ofSize: 18, weight: .semibold)
@@ -34,13 +33,12 @@ class ListTableViewCell: UITableViewCell {
     lazy var filesCount: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = ""
         label.textColor = .black
         label.font = .systemFont(ofSize: 16, weight: .semibold)
         return label
     }()
     
-    let labelStackView: UIStackView = {
+    lazy var labelStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.distribution = .fill
         view.axis = .vertical
@@ -59,10 +57,13 @@ class ListTableViewCell: UITableViewCell {
         view.isLayoutMarginsRelativeArrangement = true
         view.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .yellow
         return view
     }()
 
+    // MARK: - Property(ies).
+    private let placeholder = UIImage(named: "github-icon")
+    
+    // MARK: - Override(s).
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         cellStackView.addArrangedSubview(photoImageView)
@@ -77,22 +78,22 @@ class ListTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func configure(model: Repository) {
-        nameLabel.text = model.ownerLogin
-        filesCount.text = String("\(model.filesCount) Arquivo(s)")
-        let url = URL(string: model.ownerAvatarUrl)
-        self.photoImageView.kf.setImage(with: url)
-    }
-
     override func prepareForReuse() {
         super.prepareForReuse()
         nameLabel.text = nil
         photoImageView.image = nil
         filesCount.text = nil
     }
+    
+    // MARK: - UIConfigurable.
+    public func configure(model: Repository) {
+        nameLabel.text = model.ownerLogin
+        filesCount.text = String("\(model.filesCount) Arquivo(s)")
+        let url = URL(string: model.ownerAvatarUrl)
+        photoImageView.kf.setImage(with: url, placeholder: placeholder)
+    }
 
     private func configConstraints() {
-
         photoImageView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
 
         NSLayoutConstraint.activate([

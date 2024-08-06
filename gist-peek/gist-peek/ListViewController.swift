@@ -8,7 +8,7 @@
 import UIKit
 
 class ListViewController: UIViewController {
-    // MARK: - Property(ies).
+    // MARK: - Component(s).
     private lazy var mainView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -23,6 +23,12 @@ class ListViewController: UIViewController {
         tableView.backgroundColor = .white
         return tableView
     }()
+    
+    // MARK: - Property(ies).
+    var model: ListViewModel?
+    var repositories: [Repository] {
+        model?.repositories ?? []
+    }
 
     // MARK: - Override(s).
     override func viewDidLoad() {
@@ -41,6 +47,7 @@ class ListViewController: UIViewController {
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
     }
     
+    // MARK: - UIConfigurable.
     private func configConstraints() {
         NSLayoutConstraint.activate([
             mainView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -58,7 +65,7 @@ class ListViewController: UIViewController {
 // MARK: - Extension(s).
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,7 +74,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         ) as? ListTableViewCell else {
             fatalError()
         }
-        let repository = Repository.fixture()
+        let repository = repositories[indexPath.row]
         cell.configure(model: repository)
         return cell
     }
