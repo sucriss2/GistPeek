@@ -18,10 +18,11 @@ final class ListService {
     
     // MARK: - Method(s).
     func fetchRepositories(
+        page: Int,
         onComplete: @escaping ([Repository]) -> Void,
         onError: @escaping (Error) -> Void
     ) {
-        let request = Request(baseURL: Server.baseUrl, path: "?page=0", method: .get)
+        let request = Request(baseURL: Server.baseUrl, path: "?page=\(page)", method: .get)
         network.request(request: request, returning: [Repository].self) { result in
             switch result {
             case .failure(let error):

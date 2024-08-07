@@ -21,7 +21,10 @@ class Network {
         using request: RequestProtocol,
         onComplete: @escaping (Result<Data, Error>) -> Void
     ) {
-        guard let url = URL(string: request.baseURL + request.path) else { return }
+        guard let url = URL(string: request.baseURL + request.path) else {
+            onComplete(.failure(NetworkError.invalidURL))
+            return
+        }
         debugPrint(url.absoluteString)
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
@@ -29,25 +32,25 @@ class Network {
         let datatask = session.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
                 debugPrint(error.localizedDescription)
-                onComplete(.failure(error))
+                onComplete(.failure(NetworkError.requestFailed))
                 return
             }
 
             guard let response = response as? HTTPURLResponse else {
                 let error = NSError(domain: "Response fail", code: 499, userInfo: nil)
-                onComplete(.failure(error))
+                onComplete(.failure(NetworkError.notFound))
                 return
             }
 
             guard response.statusCode >= 200 && response.statusCode < 300 else {
                 let error = NSError(domain: "Unexpected fail", code: response.statusCode, userInfo: nil)
-                onComplete(.failure(error))
+                onComplete(.failure(NetworkError.notFound))
                 return
             }
 
             guard let data = data else {
                 let error = NSError(domain: "No Data", code: 499, userInfo: nil)
-                onComplete(.failure(error))
+                onComplete(.failure(NetworkError.invalidURL))
                 return
             }
 
@@ -65,7 +68,7 @@ class Network {
         requestData(using: request) { result in
             switch result {
             case .failure(let error):
-                onComplete(.failure(error))
+                onComplete(.failure(NetworkError.requestFailed))
             case .success(let data):
                 do {
                     let decoder = JSONDecoder()
@@ -73,7 +76,7 @@ class Network {
                     let object = try decoder.decode(type, from: data)
                     onComplete(.success(object))
                 } catch {
-                    onComplete(.failure(error))
+                    onComplete(.failure(NetworkError.parseError))
                 }
             }
         }
