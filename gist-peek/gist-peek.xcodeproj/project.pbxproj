@@ -34,6 +34,7 @@
 		8CF899902C62ABA0007F3859 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8998F2C62ABA0007F3859 /* NetworkTests.swift */; };
 		8CF899922C62ABC5007F3859 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899912C62ABC5007F3859 /* MockURLSession.swift */; };
 		8CF899942C62BFBD007F3859 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899932C62BFBD007F3859 /* ListService.swift */; };
+		8CF899962C64F176007F3859 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899952C64F176007F3859 /* LoadingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		8CF8998F2C62ABA0007F3859 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		8CF899912C62ABC5007F3859 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		8CF899932C62BFBD007F3859 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
+		8CF899952C64F176007F3859 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF394942C612A3A0074E83A /* ListCoordinator.swift */,
+				8CF899952C64F176007F3859 /* LoadingTableViewCell.swift */,
 				8CF394612C611A810074E83A /* ListViewController.swift */,
 				8CF899692C614F48007F3859 /* ListTableViewCell.swift */,
 				8CF899832C627470007F3859 /* ListViewModel.swift */,
@@ -391,6 +394,7 @@
 			files = (
 				8CF899872C629BFA007F3859 /* Network.swift in Sources */,
 				8CF8998D2C62A961007F3859 /* NetworkError.swift in Sources */,
+				8CF899962C64F176007F3859 /* LoadingTableViewCell.swift in Sources */,
 				8CF394912C61294F0074E83A /* AppCoordinator.swift in Sources */,
 				8CF394622C611A810074E83A /* ListViewController.swift in Sources */,
 				8CF899842C627470007F3859 /* ListViewModel.swift in Sources */,

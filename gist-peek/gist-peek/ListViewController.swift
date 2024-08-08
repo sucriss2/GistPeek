@@ -46,6 +46,7 @@ class ListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
+        tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.identifier)
     }
     
     // MARK: - UIConfigurable.
