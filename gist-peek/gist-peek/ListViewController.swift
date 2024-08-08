@@ -28,7 +28,6 @@ class ListViewController: UIViewController {
     private lazy var emptyView: EmptyView = {
         let view = EmptyView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
         return view
     }()
     
@@ -42,12 +41,11 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Lista"
-        view.backgroundColor = .cyan
+        view.backgroundColor = .white
         view.addSubview(mainView)
         configTableView()
         configConstraints()
         model?.load()
-        mainView.bringSubviewToFront(emptyView)
         setupAddConfiguration()
     }
     
@@ -59,7 +57,7 @@ class ListViewController: UIViewController {
         tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.identifier)
     }
     
-    func setupAddConfiguration() {
+    private func setupAddConfiguration() {
         emptyView.button.addTarget(self, action: #selector(reloading), for: .touchUpInside)
     }
     
@@ -68,10 +66,18 @@ class ListViewController: UIViewController {
         model?.load()
     }
     
+    private func setStateView() {
+        if model?.repositories.isEmpty == true {
+            mainView.bringSubviewToFront(emptyView)
+        } else {
+            mainView.bringSubviewToFront(tableView)
+        }
+    }
+    
     // MARK: - UIConfigurable.
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: view.topAnchor),
+            mainView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -138,6 +144,7 @@ extension ListViewController: ListViewModelDelegate {
     func didLoadSucess() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.setStateView()
         }
     }
     
