@@ -12,6 +12,7 @@ class ListViewController: UIViewController {
     private lazy var mainView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(emptyView)
         view.addSubview(tableView)
         return view
     }()
@@ -24,12 +25,19 @@ class ListViewController: UIViewController {
         return tableView
     }()
     
-    // MARK: - Property(ies).
+    private lazy var emptyView: EmptyView = {
+        let view = EmptyView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        return view
+    }()
+    
+//     MARK: - Property(ies).
     var model: ListViewModel?
     var repositories: [Repository] {
         model?.repositories ?? []
     }
-
+    
     // MARK: - Override(s).
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +47,8 @@ class ListViewController: UIViewController {
         configTableView()
         configConstraints()
         model?.load()
+        mainView.bringSubviewToFront(emptyView)
+        setupAddConfiguration()
     }
     
     // MARK: - Method(s).
@@ -47,6 +57,15 @@ class ListViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
         tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.identifier)
+    }
+    
+    func setupAddConfiguration() {
+        emptyView.button.addTarget(self, action: #selector(reloading), for: .touchUpInside)
+    }
+    
+    @objc private func reloading() {
+        emptyView.button.backgroundColor = .gray
+        model?.load()
     }
     
     // MARK: - UIConfigurable.
@@ -60,7 +79,13 @@ class ListViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: mainView.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor),
+            
+            emptyView.topAnchor.constraint(equalTo: mainView.topAnchor),
+            emptyView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
+            emptyView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
+            emptyView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
+            
         ])
     }
 }

@@ -20,7 +20,7 @@ final class EmptyView: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Nào há nada aqui"
+        label.text = "Não há nada aqui"
         label.textColor = .darkGray
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         return label
@@ -37,25 +37,47 @@ final class EmptyView: UIView {
     }()
 
     private lazy var imageView: UIImageView = {
-        let imageView = UIImageView(frame: .zero)
-        imageView.image = UIImage(named: "empty")
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        imageView.tintColor = .red
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
+        let image = UIImageView(frame: .zero)
+        image.image = UIImage(named: "empty")
+        image.contentMode = .scaleAspectFit
+        image.clipsToBounds = true
+        image.tintColor = .red
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
+    private lazy var reloadButton: UIButton = {
+        let view = UIButton(frame: .zero)
+        view.backgroundColor = .red
+        view.layer.cornerRadius = 8.0
+        view.setAttributedTitle(
+            NSAttributedString(
+                string: "Atualizar",
+                attributes: [
+                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18.0),
+                    NSAttributedString.Key.foregroundColor: UIColor.white
+                ]
+            ),
+            for: .normal)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
 
     private lazy var stackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.distribution = .fill
-        view.axis = .horizontal
-        view.spacing = 16
+        view.axis = .vertical
+        view.alignment = .center
+        view.spacing = 8
         view.isLayoutMarginsRelativeArrangement = true
-        view.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        view.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 120, right: 16)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    var button: UIButton {
+        return reloadButton
+    }
     
     // MARK: - Initialization.
     init() {
@@ -73,23 +95,28 @@ final class EmptyView: UIView {
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(textLabel)
+        stackView.addArrangedSubview(reloadButton)
         mainView.addSubview(stackView)
         addSubview(mainView)
     }
     
     private func configConstraints() {
+        
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalTo: mainView.heightAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 100),
+            
+            reloadButton.heightAnchor.constraint(equalToConstant: 44),
+            reloadButton.widthAnchor.constraint(equalToConstant: 120),
             
             mainView.topAnchor.constraint(equalTo: self.topAnchor),
             mainView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             mainView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
-            mainView.topAnchor.constraint(equalTo: mainView.topAnchor),
-            mainView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
-            mainView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
-            mainView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
+            stackView.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: mainView.centerYAnchor)
+            
         ])
     }
 }
