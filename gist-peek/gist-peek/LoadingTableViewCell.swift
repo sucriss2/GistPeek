@@ -42,6 +42,12 @@ final class LoadingTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        spinner.isHidden = false
+        spinner.startAnimating()
+    }
+    
     // MARK: - Method(s).
     private func configConstraints() {
         NSLayoutConstraint.activate([

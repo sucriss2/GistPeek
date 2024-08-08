@@ -71,6 +71,18 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if repositories.count - 1 == indexPath.row {
+            self.model?.load()
+            return makeLoadingCell(tableView, cellForRowAt: indexPath)
+        }
+        return makeListCell(tableView, cellForRowAt: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    private func makeListCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ListTableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: ListTableViewCell.identifier, for: indexPath
         ) as? ListTableViewCell else {
@@ -81,11 +93,20 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+    private func makeLoadingCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if model?.isLoading == true {
+            
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: LoadingTableViewCell.identifier, for: indexPath
+            ) as? LoadingTableViewCell else {
+                fatalError()
+            }
+            return cell
+        }
+        
+        return makeListCell(tableView, cellForRowAt: indexPath)
     }
-    
-    
 }
 
 extension ListViewController: ListViewModelDelegate {
