@@ -14,6 +14,7 @@ class ListViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(emptyView)
         view.addSubview(tableView)
+        view.addSubview(errorConection)
         return view
     }()
     
@@ -26,12 +27,19 @@ class ListViewController: UIViewController {
     }()
     
     private lazy var emptyView: EmptyView = {
-        let view = EmptyView()
+        let view = EmptyView(config: EmptyView.Config(title: "Não há nada aqui", textInfo: "sua lista de coleção está vazia", buttonTitle: "Atualizar"))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-//     MARK: - Property(ies).
+    private lazy var errorConection: EmptyView = {
+        let config = EmptyView.Config(title: "Erro na conexão", textInfo: "Verifique sua rede e tente novamente", image: UIImage(named: "error-connection"), buttonTitle: "Recarregar")
+        let view = EmptyView(config: config)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    // MARK: - Property(ies).
     var model: ListViewModel?
     var repositories: [Repository] {
         model?.repositories ?? []
@@ -46,7 +54,6 @@ class ListViewController: UIViewController {
         configTableView()
         configConstraints()
         model?.load()
-        setupAddConfiguration()
     }
     
     // MARK: - Method(s).
@@ -55,15 +62,6 @@ class ListViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
         tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.identifier)
-    }
-    
-    private func setupAddConfiguration() {
-        emptyView.button.addTarget(self, action: #selector(reloading), for: .touchUpInside)
-    }
-    
-    @objc private func reloading() {
-        emptyView.button.backgroundColor = .gray
-        model?.load()
     }
     
     private func setStateView() {
@@ -80,19 +78,12 @@ class ListViewController: UIViewController {
             mainView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-
-            tableView.topAnchor.constraint(equalTo: mainView.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor),
-            
-            emptyView.topAnchor.constraint(equalTo: mainView.topAnchor),
-            emptyView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
-            emptyView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
-            emptyView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
-            
+            mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+        tableView.lineToViewBorder(view: mainView)
+        emptyView.lineToViewBorder(view: mainView)
+        errorConection.lineToViewBorder(view: mainView)
     }
 }
 // MARK: - Extension(s).
@@ -150,7 +141,21 @@ extension ListViewController: ListViewModelDelegate {
     
     func didError(message: String) {
         DispatchQueue.main.async {
+            self.mainView.bringSubviewToFront(self.errorConection)
             print(message)
         }
+    }
+}
+
+extension UIView {
+    func lineToViewBorder(view: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: view.topAnchor),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 }

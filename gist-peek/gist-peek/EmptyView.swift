@@ -9,10 +9,18 @@ import Foundation
 import UIKit
 
 final class EmptyView: UIView {
+    
+    struct Config {
+        let title: String
+        let textInfo: String
+        var image = UIImage(named: "empty")
+        let buttonTitle: String
+    }
+    
     // MARK: - Component(s).
     private lazy var mainView: UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -20,7 +28,7 @@ final class EmptyView: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Não há nada aqui"
+        label.text = config.title
         label.textColor = .darkGray
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         return label
@@ -29,7 +37,7 @@ final class EmptyView: UIView {
     private lazy var textLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "sua lista de coleção está vazia"
+        label.text = config.textInfo
         label.textColor = .lightGray
         label.numberOfLines = 2
         label.font = .systemFont(ofSize: 16, weight: .semibold)
@@ -38,7 +46,7 @@ final class EmptyView: UIView {
 
     private lazy var imageView: UIImageView = {
         let image = UIImageView(frame: .zero)
-        image.image = UIImage(named: "empty")
+        image.image = config.image
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.tintColor = .red
@@ -52,7 +60,7 @@ final class EmptyView: UIView {
         view.layer.cornerRadius = 8.0
         view.setAttributedTitle(
             NSAttributedString(
-                string: "Atualizar",
+                string: config.buttonTitle,
                 attributes: [
                     NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18.0),
                     NSAttributedString.Key.foregroundColor: UIColor.white
@@ -75,12 +83,12 @@ final class EmptyView: UIView {
         return view
     }()
     
-    var button: UIButton {
-        return reloadButton
-    }
+    // MARK: - Property(ies).
+    let config: Config
     
     // MARK: - Initialization.
-    init() {
+    init(config: Config) {
+        self.config = config
         super.init(frame: .zero)
         buidViewHierarchy()
         configConstraints()
