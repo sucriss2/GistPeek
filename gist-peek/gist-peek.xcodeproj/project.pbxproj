@@ -35,6 +35,7 @@
 		8CF899922C62ABC5007F3859 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899912C62ABC5007F3859 /* MockURLSession.swift */; };
 		8CF899942C62BFBD007F3859 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899932C62BFBD007F3859 /* ListService.swift */; };
 		8CF899962C64F176007F3859 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899952C64F176007F3859 /* LoadingTableViewCell.swift */; };
+		8CF899992C650568007F3859 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899982C650568007F3859 /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		8CF899912C62ABC5007F3859 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		8CF899932C62BFBD007F3859 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		8CF899952C64F176007F3859 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		8CF899982C650568007F3859 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 		8CF3948F2C6129160074E83A /* List */ = {
 			isa = PBXGroup;
 			children = (
+				8CF899972C65054A007F3859 /* Views */,
 				8CF394942C612A3A0074E83A /* ListCoordinator.swift */,
 				8CF394612C611A810074E83A /* ListViewController.swift */,
 				8CF899692C614F48007F3859 /* ListTableViewCell.swift */,
@@ -253,6 +256,14 @@
 				8CF8998F2C62ABA0007F3859 /* NetworkTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		8CF899972C65054A007F3859 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CF899982C650568007F3859 /* EmptyView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +408,7 @@
 				8CF899962C64F176007F3859 /* LoadingTableViewCell.swift in Sources */,
 				8CF394912C61294F0074E83A /* AppCoordinator.swift in Sources */,
 				8CF394622C611A810074E83A /* ListViewController.swift in Sources */,
+				8CF899992C650568007F3859 /* EmptyView.swift in Sources */,
 				8CF899842C627470007F3859 /* ListViewModel.swift in Sources */,
 				8CF8997F2C6255A0007F3859 /* RepositoryFile.swift in Sources */,
 				8CF394952C612A3A0074E83A /* ListCoordinator.swift in Sources */,

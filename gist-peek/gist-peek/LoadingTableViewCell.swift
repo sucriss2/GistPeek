@@ -13,14 +13,14 @@ final class LoadingTableViewCell: UITableViewCell {
     static let identifier = "LoadingTableViewCell"
     
     // MARK: - Component(s).
-    private let mainView: UIView = {
+    private lazy var mainView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    lazy var spinner: UIActivityIndicatorView = {
+    private lazy var spinner: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.color = .red
