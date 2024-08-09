@@ -154,7 +154,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ListViewController: ListViewModelDelegate {
     func didLoadSucess() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.hideLoading()
             self.tableView.reloadData()
             self.setStateView()
         }
@@ -162,6 +164,7 @@ extension ListViewController: ListViewModelDelegate {
 
     func didError(message: String) {
         DispatchQueue.main.async {
+            self.hideLoading()
             self.mainView.bringSubviewToFront(self.errorConection)
             print(message)
         }
@@ -183,7 +186,9 @@ extension UIView {
 
 extension ListViewController: StatusViewDelegate {
     func didReloadView() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.showLoading()
             self.model?.load()
         }
     }

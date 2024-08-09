@@ -28,7 +28,7 @@ class ListService {
             case .failure(let error):
                 onError(error)
             case .success(let repositories):
-                onComplete([])
+                onComplete(repositories ?? [])
             }
         }
     }
