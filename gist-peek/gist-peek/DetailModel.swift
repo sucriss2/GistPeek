@@ -8,6 +8,7 @@
 import Foundation
 
 class DetailModel {
+    // MARK: - Property(ies).
     private var user: Repository
     
     var image: String {
@@ -18,6 +19,7 @@ class DetailModel {
         return user.ownerLogin
     }
     
+    // MARK: - Initialization.
     init(user: Repository) {
         self.user = user
     }

@@ -35,7 +35,7 @@ final class ListCoordinator: Coordinator {
         return controller
     }
 }
-
+// MARK: - Extension(s).
 extension ListCoordinator: ListViewControllerDelegate {
     func showDetail(detail: Repository) {
         let detailCoordinator = DetailCoordinator(user: detail, navigationController: navigationController)

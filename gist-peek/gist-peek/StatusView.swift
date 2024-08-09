@@ -132,7 +132,6 @@ final class StatusView: UIView {
             
             stackView.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: mainView.centerYAnchor)
-            
         ])
     }
 }

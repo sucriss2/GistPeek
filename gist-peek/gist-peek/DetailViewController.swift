@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 final class DetailViewController: UIViewController {
-    
+    // MARK: - Property(ies).
     var screen: DetailView?
     var model: DetailModel?
     
@@ -22,6 +22,7 @@ final class DetailViewController: UIViewController {
         setupDetail()
     }
     
+    // MARK: - Method(s).
     private func setupDetail() {
         guard let model = model else {
             return
