@@ -37,19 +37,19 @@ class Network {
             }
 
             guard let response = response as? HTTPURLResponse else {
-                let error = NSError(domain: "Response fail", code: 499, userInfo: nil)
+                _ = NSError(domain: "Response fail", code: 499, userInfo: nil)
                 onComplete(.failure(NetworkError.notFound))
                 return
             }
 
             guard response.statusCode >= 200 && response.statusCode < 300 else {
-                let error = NSError(domain: "Unexpected fail", code: response.statusCode, userInfo: nil)
+                _ = NSError(domain: "Unexpected fail", code: response.statusCode, userInfo: nil)
                 onComplete(.failure(NetworkError.notFound))
                 return
             }
 
             guard let data = data else {
-                let error = NSError(domain: "No Data", code: 499, userInfo: nil)
+                _ = NSError(domain: "No Data", code: 499, userInfo: nil)
                 onComplete(.failure(NetworkError.invalidURL))
                 return
             }
@@ -67,7 +67,7 @@ class Network {
     ) {
         requestData(using: request) { result in
             switch result {
-            case .failure(let error):
+            case .failure(_):
                 onComplete(.failure(NetworkError.requestFailed))
             case .success(let data):
                 do {

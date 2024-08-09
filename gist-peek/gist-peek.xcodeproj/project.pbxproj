@@ -36,6 +36,10 @@
 		8CF899942C62BFBD007F3859 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899932C62BFBD007F3859 /* ListService.swift */; };
 		8CF899962C64F176007F3859 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899952C64F176007F3859 /* LoadingTableViewCell.swift */; };
 		8CF899992C650568007F3859 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899982C650568007F3859 /* StatusView.swift */; };
+		8CF8999E2C65A3BD007F3859 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8999D2C65A3BD007F3859 /* DetailViewController.swift */; };
+		8CF899A02C65A45C007F3859 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8999F2C65A45C007F3859 /* DetailCoordinator.swift */; };
+		8CF899A22C65A9FA007F3859 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899A12C65A9FA007F3859 /* DetailView.swift */; };
+		8CF899A62C65B0EC007F3859 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899A52C65B0EC007F3859 /* DetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,10 @@
 		8CF899932C62BFBD007F3859 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		8CF899952C64F176007F3859 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		8CF899982C650568007F3859 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		8CF8999D2C65A3BD007F3859 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8CF8999F2C65A45C007F3859 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		8CF899A12C65A9FA007F3859 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		8CF899A52C65B0EC007F3859 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF3948F2C6129160074E83A /* List */,
+				8CF8999C2C65A353007F3859 /* Detail */,
 			);
 			name = Features;
 			sourceTree = "<group>";
@@ -264,6 +273,17 @@
 				8CF899982C650568007F3859 /* StatusView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		8CF8999C2C65A353007F3859 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8CF8999F2C65A45C007F3859 /* DetailCoordinator.swift */,
+				8CF8999D2C65A3BD007F3859 /* DetailViewController.swift */,
+				8CF899A12C65A9FA007F3859 /* DetailView.swift */,
+				8CF899A52C65B0EC007F3859 /* DetailModel.swift */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,13 +423,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF899A02C65A45C007F3859 /* DetailCoordinator.swift in Sources */,
 				8CF899872C629BFA007F3859 /* Network.swift in Sources */,
 				8CF8998D2C62A961007F3859 /* NetworkError.swift in Sources */,
 				8CF899962C64F176007F3859 /* LoadingTableViewCell.swift in Sources */,
+				8CF899A62C65B0EC007F3859 /* DetailModel.swift in Sources */,
 				8CF394912C61294F0074E83A /* AppCoordinator.swift in Sources */,
+				8CF899A22C65A9FA007F3859 /* DetailView.swift in Sources */,
 				8CF394622C611A810074E83A /* ListViewController.swift in Sources */,
 				8CF899992C650568007F3859 /* StatusView.swift in Sources */,
 				8CF899842C627470007F3859 /* ListViewModel.swift in Sources */,
+				8CF8999E2C65A3BD007F3859 /* DetailViewController.swift in Sources */,
 				8CF8997F2C6255A0007F3859 /* RepositoryFile.swift in Sources */,
 				8CF394952C612A3A0074E83A /* ListCoordinator.swift in Sources */,
 				8CF899752C6247D6007F3859 /* Owner.swift in Sources */,
