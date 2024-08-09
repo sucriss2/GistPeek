@@ -27,9 +27,13 @@ extension Repository {
 #if DEBUG
 extension Repository {
     static func fixture(
-        files: [String: RepositoryFile] = ["1": RepositoryFile.fixture(), "2": RepositoryFile.fixture(), "3": RepositoryFile.fixture(), "4": RepositoryFile.fixture()] ,
+        files: [String: RepositoryFile] = [
+            "1": RepositoryFile.fixture(),
+            "2": RepositoryFile.fixture(),
+            "3": RepositoryFile.fixture(),
+            "4": RepositoryFile.fixture()],
         owner: Owner = Owner.fixture()) -> Repository {
-            Repository(files: files , owner: owner)
+            Repository(files: files, owner: owner)
     }
 }
 #endif

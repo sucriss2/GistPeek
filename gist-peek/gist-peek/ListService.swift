@@ -10,12 +10,12 @@ import Foundation
 final class ListService {
     // MARK: - Property(ies).
     private let network: Network
-    
+
     // MARK: - Initialization.
     init(network: Network = Network()) {
         self.network = network
     }
-    
+
     // MARK: - Method(s).
     func fetchRepositories(
         page: Int,

@@ -24,7 +24,7 @@ class ListViewModel {
     init() {
         repositories = []
     }
-    
+
     // MARK: - Method(s).
     func load() {
         isLoading = true

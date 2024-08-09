@@ -25,7 +25,7 @@ final class AppCoordinator: Coordinator {
     func start() {
         showLogin()
     }
-    
+
     private func showLogin() {
         let coordinator = ListCoordinator(navigationController: navigationController)
         coordinator.start()

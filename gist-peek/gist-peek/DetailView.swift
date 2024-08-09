@@ -18,7 +18,7 @@ final class DetailView: UIView {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-    
+
     private lazy var nameLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +27,7 @@ final class DetailView: UIView {
         label.font = .systemFont(ofSize: 24, weight: .bold)
         return label
     }()
-    
+
     private lazy var stackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.distribution = .fill
@@ -39,14 +39,14 @@ final class DetailView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     // MARK: - Property(ies).
     var name: String? {
         didSet {
             nameLabel.text = name ?? String()
         }
     }
-    
+
     // MARK: - Initialization.
     init() {
         super.init(frame: .zero)
@@ -54,23 +54,23 @@ final class DetailView: UIView {
         buidViewHierarchy()
         configConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - UIConfigurable.
     private func buidViewHierarchy() {
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(nameLabel)
         self.addSubview(stackView)
     }
-    
+
     private func configConstraints() {
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalTo: self.heightAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 200),
-            
+
             stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])

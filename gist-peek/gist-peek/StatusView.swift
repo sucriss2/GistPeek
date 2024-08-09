@@ -13,14 +13,14 @@ protocol StatusViewDelegate: AnyObject {
 }
 
 final class StatusView: UIView {
-    
+
     struct Config {
         let title: String
         let textInfo: String
         var image = UIImage(named: "empty")
         let buttonTitle: String
     }
-    
+
     // MARK: - Component(s).
     private lazy var mainView: UIView = {
         let view = UIView(frame: .zero)
@@ -28,7 +28,7 @@ final class StatusView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ final class StatusView: UIView {
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         return label
     }()
-    
+
     private lazy var textLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +57,7 @@ final class StatusView: UIView {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-    
+
     private lazy var reloadButton: UIButton = {
         let view = UIButton(frame: .zero)
         view.backgroundColor = .red
@@ -89,11 +89,11 @@ final class StatusView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     // MARK: - Property(ies).
     let config: Config
     weak var delegate: StatusViewDelegate?
-    
+
     // MARK: - Initialization.
     init(config: Config) {
         self.config = config
@@ -101,11 +101,11 @@ final class StatusView: UIView {
         buidViewHierarchy()
         configConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - UIConfigurable.
     private func buidViewHierarchy() {
         stackView.addArrangedSubview(imageView)
@@ -115,21 +115,21 @@ final class StatusView: UIView {
         mainView.addSubview(stackView)
         addSubview(mainView)
     }
-    
+
     private func configConstraints() {
-        
+
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalTo: mainView.heightAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 100),
-            
+
             reloadButton.heightAnchor.constraint(equalToConstant: 44),
             reloadButton.widthAnchor.constraint(equalToConstant: 120),
-            
+
             mainView.topAnchor.constraint(equalTo: self.topAnchor),
             mainView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             mainView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
+
             stackView.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: mainView.centerYAnchor)
         ])

@@ -21,7 +21,7 @@ class ListViewController: UIViewController {
         view.addSubview(errorConection)
         return view
     }()
-    
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -29,27 +29,36 @@ class ListViewController: UIViewController {
         tableView.backgroundColor = .white
         return tableView
     }()
-    
+
     private lazy var emptyView: StatusView = {
-        let view = StatusView(config: StatusView.Config(title: "Não há nada aqui", textInfo: "sua lista de coleção está vazia", buttonTitle: "Atualizar"))
+        let view = StatusView(config: StatusView.Config(
+                title: "Não há nada aqui",
+                textInfo: "sua lista de coleção está vazia",
+                buttonTitle: "Atualizar")
+        )
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     private lazy var errorConection: StatusView = {
-        let config = StatusView.Config(title: "Erro na conexão", textInfo: "Verifique sua rede e tente novamente", image: UIImage(named: "error-connection"), buttonTitle: "Recarregar")
+        let config = StatusView.Config(
+            title: "Erro na conexão",
+            textInfo: "Verifique sua rede e tente novamente",
+            image: UIImage(named: "error-connection"),
+            buttonTitle: "Recarregar"
+        )
         let view = StatusView(config: config)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     // MARK: - Property(ies).
     var model: ListViewModel?
     var repositories: [Repository] {
         model?.repositories ?? []
     }
     weak var delegate: ListViewControllerDelegate?
-    
+
     // MARK: - Override(s).
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +71,7 @@ class ListViewController: UIViewController {
         emptyView.delegate = self
         errorConection.delegate = self
     }
-    
+
     // MARK: - Method(s).
     private func configTableView() {
         tableView.delegate = self
@@ -70,7 +79,7 @@ class ListViewController: UIViewController {
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
         tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.identifier)
     }
-    
+
     private func setStateView() {
         if model?.repositories.isEmpty == true {
             mainView.bringSubviewToFront(emptyView)
@@ -78,7 +87,7 @@ class ListViewController: UIViewController {
             mainView.bringSubviewToFront(tableView)
         }
     }
-    
+
     // MARK: - UIConfigurable.
     private func configConstraints() {
         NSLayoutConstraint.activate([
@@ -87,7 +96,7 @@ class ListViewController: UIViewController {
             mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
+
         tableView.lineToViewBorder(view: mainView)
         emptyView.lineToViewBorder(view: mainView)
         errorConection.lineToViewBorder(view: mainView)
@@ -98,7 +107,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repositories.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if repositories.count - 1 == indexPath.row {
             self.model?.load()
@@ -106,11 +115,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return makeListCell(tableView, cellForRowAt: indexPath)
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-    
+
     private func makeListCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ListTableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: ListTableViewCell.identifier, for: indexPath
@@ -121,11 +130,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(model: repository)
         return cell
     }
-    
+
     private func makeLoadingCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         if model?.isLoading == true {
-            
+
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: LoadingTableViewCell.identifier, for: indexPath
             ) as? LoadingTableViewCell else {
@@ -133,10 +142,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         }
-        
+
         return makeListCell(tableView, cellForRowAt: indexPath)
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let repository = repositories[indexPath.row]
         delegate?.showDetail(detail: repository)
@@ -150,7 +159,7 @@ extension ListViewController: ListViewModelDelegate {
             self.setStateView()
         }
     }
-    
+
     func didError(message: String) {
         DispatchQueue.main.async {
             self.mainView.bringSubviewToFront(self.errorConection)
@@ -162,7 +171,7 @@ extension ListViewController: ListViewModelDelegate {
 extension UIView {
     func lineToViewBorder(view: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             topAnchor.constraint(equalTo: view.topAnchor),
             leadingAnchor.constraint(equalTo: view.leadingAnchor),

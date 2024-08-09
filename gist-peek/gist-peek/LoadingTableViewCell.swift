@@ -11,7 +11,7 @@ import UIKit
 final class LoadingTableViewCell: UITableViewCell {
     // MARK: - Property(ies).
     static let identifier = "LoadingTableViewCell"
-    
+
     // MARK: - Component(s).
     private lazy var mainView: UIView = {
         let view = UIView(frame: .zero)
@@ -19,7 +19,7 @@ final class LoadingTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     private lazy var spinner: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +29,7 @@ final class LoadingTableViewCell: UITableViewCell {
         view.startAnimating()
         return view
     }()
-    
+
     // MARK: - Override(s).
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,17 +37,17 @@ final class LoadingTableViewCell: UITableViewCell {
         contentView.addSubview(mainView)
         configConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         spinner.isHidden = false
         spinner.startAnimating()
     }
-    
+
     // MARK: - Method(s).
     private func configConstraints() {
         NSLayoutConstraint.activate([
@@ -55,7 +55,7 @@ final class LoadingTableViewCell: UITableViewCell {
             mainView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             mainView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
+
             spinner.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
             spinner.centerYAnchor.constraint(equalTo: mainView.centerYAnchor)
         ])

@@ -12,9 +12,6 @@
 		8CF394622C611A810074E83A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF394612C611A810074E83A /* ListViewController.swift */; };
 		8CF394652C611A810074E83A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF394632C611A810074E83A /* Main.storyboard */; };
 		8CF394672C611A830074E83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF394662C611A830074E83A /* Assets.xcassets */; };
-		8CF394752C611A830074E83A /* gist_peekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF394742C611A830074E83A /* gist_peekTests.swift */; };
-		8CF3947F2C611A830074E83A /* gist_peekUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF3947E2C611A830074E83A /* gist_peekUITests.swift */; };
-		8CF394812C611A830074E83A /* gist_peekUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF394802C611A830074E83A /* gist_peekUITestsLaunchTests.swift */; };
 		8CF394912C61294F0074E83A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF394902C61294F0074E83A /* AppCoordinator.swift */; };
 		8CF394932C61297B0074E83A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF394922C61297B0074E83A /* Coordinator.swift */; };
 		8CF394952C612A3A0074E83A /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF394942C612A3A0074E83A /* ListCoordinator.swift */; };
@@ -68,10 +65,7 @@
 		8CF394662C611A830074E83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CF3946B2C611A830074E83A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CF394702C611A830074E83A /* gist-peekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gist-peekTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CF394742C611A830074E83A /* gist_peekTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gist_peekTests.swift; sourceTree = "<group>"; };
 		8CF3947A2C611A830074E83A /* gist-peekUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gist-peekUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CF3947E2C611A830074E83A /* gist_peekUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gist_peekUITests.swift; sourceTree = "<group>"; };
-		8CF394802C611A830074E83A /* gist_peekUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gist_peekUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8CF394902C61294F0074E83A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8CF394922C61297B0074E83A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8CF394942C612A3A0074E83A /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
@@ -165,7 +159,6 @@
 				8CF8998E2C62AB63007F3859 /* Network */,
 				8CF899792C624C71007F3859 /* Models */,
 				8CF899762C624C28007F3859 /* Resources */,
-				8CF394742C611A830074E83A /* gist_peekTests.swift */,
 			);
 			path = "gist-peekTests";
 			sourceTree = "<group>";
@@ -173,8 +166,6 @@
 		8CF3947D2C611A830074E83A /* gist-peekUITests */ = {
 			isa = PBXGroup;
 			children = (
-				8CF3947E2C611A830074E83A /* gist_peekUITests.swift */,
-				8CF394802C611A830074E83A /* gist_peekUITestsLaunchTests.swift */,
 			);
 			path = "gist-peekUITests";
 			sourceTree = "<group>";
@@ -294,6 +285,7 @@
 			buildConfigurationList = 8CF394842C611A830074E83A /* Build configuration list for PBXNativeTarget "gist-peek" */;
 			buildPhases = (
 				8CF394562C611A800074E83A /* Sources */,
+				8C94ECFB2C6648AF0021A28F /* ShellScript */,
 				8CF394572C611A800074E83A /* Frameworks */,
 				8CF394582C611A800074E83A /* Resources */,
 			);
@@ -379,6 +371,7 @@
 			mainGroup = 8CF394512C611A800074E83A;
 			packageReferences = (
 				8CF8996E2C6245B6007F3859 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8C94ECFA2C6648270021A28F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 8CF3945B2C611A800074E83A /* Products */;
 			projectDirPath = "";
@@ -418,6 +411,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8C94ECFB2C6648AF0021A28F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8CF394562C611A800074E83A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -455,7 +469,6 @@
 			files = (
 				8CF899922C62ABC5007F3859 /* MockURLSession.swift in Sources */,
 				8CF899902C62ABA0007F3859 /* NetworkTests.swift in Sources */,
-				8CF394752C611A830074E83A /* gist_peekTests.swift in Sources */,
 				8CF8997B2C624C9B007F3859 /* RepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,8 +477,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF394812C611A830074E83A /* gist_peekUITestsLaunchTests.swift in Sources */,
-				8CF3947F2C611A830074E83A /* gist_peekUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +544,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -596,7 +607,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -795,6 +806,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8C94ECFA2C6648270021A28F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.56.1;
+			};
+		};
 		8CF8996E2C6245B6007F3859 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";

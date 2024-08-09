@@ -4,6 +4,7 @@
 //
 //  Created by Suh on 05/08/24.
 //
+// swiftlint:disable all
 
 import UIKit
 
@@ -31,6 +32,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
 }
-
+// swiftlint:enable all

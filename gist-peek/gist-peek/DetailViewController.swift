@@ -12,7 +12,7 @@ final class DetailViewController: UIViewController {
     // MARK: - Property(ies).
     var screen: DetailView?
     var model: DetailModel?
-    
+
     // MARK: - Override(s).
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ final class DetailViewController: UIViewController {
         view = screen
         setupDetail()
     }
-    
+
     // MARK: - Method(s).
     private func setupDetail() {
         guard let model = model else {

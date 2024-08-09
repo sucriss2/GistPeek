@@ -9,7 +9,7 @@ import Foundation
 
 struct Owner: Codable {
     var login: String
-    var avatarUrl: String?    
+    var avatarUrl: String?
 }
 
 #if DEBUG

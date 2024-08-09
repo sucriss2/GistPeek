@@ -11,7 +11,7 @@ import Kingfisher
 class ListTableViewCell: UITableViewCell {
 
     static let identifier = "ListTableViewCell"
-    
+
     // MARK: - Component(s).
     lazy var photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
@@ -20,7 +20,7 @@ class ListTableViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
+
     lazy var nameLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +29,7 @@ class ListTableViewCell: UITableViewCell {
         label.font = .systemFont(ofSize: 18, weight: .semibold)
         return label
     }()
-    
+
     lazy var filesCount: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ class ListTableViewCell: UITableViewCell {
         label.font = .systemFont(ofSize: 16, weight: .semibold)
         return label
     }()
-    
+
     lazy var labelStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.distribution = .fill
@@ -62,7 +62,7 @@ class ListTableViewCell: UITableViewCell {
 
     // MARK: - Property(ies).
     private let placeholder = UIImage(named: "github-icon")
-    
+
     // MARK: - Override(s).
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -84,7 +84,7 @@ class ListTableViewCell: UITableViewCell {
         photoImageView.image = nil
         filesCount.text = nil
     }
-    
+
     // MARK: - UIConfigurable.
     public func configure(model: Repository) {
         nameLabel.text = model.ownerLogin

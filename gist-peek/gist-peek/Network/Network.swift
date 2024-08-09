@@ -10,7 +10,7 @@ import Foundation
 class Network {
     // MARK: - Property(ies).
     private let session: URLSession
-    
+
     // MARK: - Initialization.
     init() {
         session = URLSession.shared
@@ -67,7 +67,7 @@ class Network {
     ) {
         requestData(using: request) { result in
             switch result {
-            case .failure(_):
+            case .failure(let error):
                 onComplete(.failure(NetworkError.requestFailed))
             case .success(let data):
                 do {
