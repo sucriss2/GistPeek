@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ListService {
+class ListService {
     // MARK: - Property(ies).
     private let network: Network
 
@@ -28,7 +28,7 @@ final class ListService {
             case .failure(let error):
                 onError(error)
             case .success(let repositories):
-                onComplete(repositories ?? [])
+                onComplete([])
             }
         }
     }

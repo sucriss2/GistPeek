@@ -1,13 +1,13 @@
 //
-//  gist_peekUITestsLaunchTests.swift
-//  gist-peekUITests
+//  GistpeekUITestsLaunchTests.swift
+//  GistpeekUITests
 //
 //  Created by Suh on 05/08/24.
 //
 
 import XCTest
 
-final class gist_peekUITestsLaunchTests: XCTestCase {
+final class GistpeekUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

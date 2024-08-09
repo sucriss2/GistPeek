@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CD467862C66530300750ACB /* GistpeekUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD467852C66530300750ACB /* GistpeekUITests.swift */; };
+		8CD467882C66532000750ACB /* GistpeekUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD467872C66532000750ACB /* GistpeekUITestsLaunchTests.swift */; };
+		8CD4678B2C66729000750ACB /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD4678A2C66729000750ACB /* ListViewModelTests.swift */; };
+		8CE40A762C669B7D0022B486 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CE40A752C669B7D0022B486 /* Kingfisher */; };
 		8CF3945E2C611A810074E83A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF3945D2C611A800074E83A /* AppDelegate.swift */; };
 		8CF394602C611A810074E83A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF3945F2C611A810074E83A /* SceneDelegate.swift */; };
 		8CF394622C611A810074E83A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF394612C611A810074E83A /* ListViewController.swift */; };
@@ -20,7 +24,6 @@
 		8CF899732C624797007F3859 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899722C624797007F3859 /* Repository.swift */; };
 		8CF899752C6247D6007F3859 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899742C6247D6007F3859 /* Owner.swift */; };
 		8CF899782C624C48007F3859 /* gists.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CF899772C624C48007F3859 /* gists.json */; };
-		8CF8997B2C624C9B007F3859 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8997A2C624C9B007F3859 /* RepositoryTests.swift */; };
 		8CF8997F2C6255A0007F3859 /* RepositoryFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8997E2C6255A0007F3859 /* RepositoryFile.swift */; };
 		8CF899812C625696007F3859 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899802C625696007F3859 /* Repositories.swift */; };
 		8CF899842C627470007F3859 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899832C627470007F3859 /* ListViewModel.swift */; };
@@ -28,8 +31,6 @@
 		8CF899892C62A581007F3859 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899882C62A581007F3859 /* Request.swift */; };
 		8CF8998B2C62A5F0007F3859 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8998A2C62A5EF007F3859 /* Server.swift */; };
 		8CF8998D2C62A961007F3859 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8998C2C62A961007F3859 /* NetworkError.swift */; };
-		8CF899902C62ABA0007F3859 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8998F2C62ABA0007F3859 /* NetworkTests.swift */; };
-		8CF899922C62ABC5007F3859 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899912C62ABC5007F3859 /* MockURLSession.swift */; };
 		8CF899942C62BFBD007F3859 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899932C62BFBD007F3859 /* ListService.swift */; };
 		8CF899962C64F176007F3859 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899952C64F176007F3859 /* LoadingTableViewCell.swift */; };
 		8CF899992C650568007F3859 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF899982C650568007F3859 /* StatusView.swift */; };
@@ -57,6 +58,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C12A4842C668A2B00DEC07A /* gist-peekUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gist-peekUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		8CD467852C66530300750ACB /* GistpeekUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistpeekUITests.swift; sourceTree = "<group>"; };
+		8CD467872C66532000750ACB /* GistpeekUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistpeekUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8CD4678A2C66729000750ACB /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		8CE40A772C669DA90022B486 /* gist-peekTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = "gist-peekTests.xctestplan"; path = "gist-peek/gist-peekTests.xctestplan"; sourceTree = "<group>"; };
+		8CE40A782C66A3050022B486 /* gist-peek.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "gist-peek.xctestplan"; sourceTree = "<group>"; };
 		8CF3945A2C611A800074E83A /* gist-peek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gist-peek.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF3945D2C611A800074E83A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF3945F2C611A810074E83A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +80,6 @@
 		8CF899722C624797007F3859 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		8CF899742C6247D6007F3859 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		8CF899772C624C48007F3859 /* gists.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gists.json; sourceTree = "<group>"; };
-		8CF8997A2C624C9B007F3859 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		8CF8997E2C6255A0007F3859 /* RepositoryFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFile.swift; sourceTree = "<group>"; };
 		8CF899802C625696007F3859 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		8CF899832C627470007F3859 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -81,8 +87,6 @@
 		8CF899882C62A581007F3859 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		8CF8998A2C62A5EF007F3859 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		8CF8998C2C62A961007F3859 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		8CF8998F2C62ABA0007F3859 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
-		8CF899912C62ABC5007F3859 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		8CF899932C62BFBD007F3859 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		8CF899952C64F176007F3859 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		8CF899982C650568007F3859 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CE40A762C669B7D0022B486 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,13 +123,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CD467892C6671E000750ACB /* ListViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CD4678A2C66729000750ACB /* ListViewModelTests.swift */,
+			);
+			path = ListViewModel;
+			sourceTree = "<group>";
+		};
+		8CE40A742C669B7C0022B486 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8CF394512C611A800074E83A = {
 			isa = PBXGroup;
 			children = (
 				8CF3945C2C611A800074E83A /* gist-peek */,
+				8CE40A782C66A3050022B486 /* gist-peek.xctestplan */,
+				8CE40A772C669DA90022B486 /* gist-peekTests.xctestplan */,
 				8CF394732C611A830074E83A /* gist-peekTests */,
 				8CF3947D2C611A830074E83A /* gist-peekUITests */,
 				8CF3945B2C611A800074E83A /* Products */,
+				8CE40A742C669B7C0022B486 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,8 +179,7 @@
 		8CF394732C611A830074E83A /* gist-peekTests */ = {
 			isa = PBXGroup;
 			children = (
-				8CF8998E2C62AB63007F3859 /* Network */,
-				8CF899792C624C71007F3859 /* Models */,
+				8CD467892C6671E000750ACB /* ListViewModel */,
 				8CF899762C624C28007F3859 /* Resources */,
 			);
 			path = "gist-peekTests";
@@ -166,6 +188,9 @@
 		8CF3947D2C611A830074E83A /* gist-peekUITests */ = {
 			isa = PBXGroup;
 			children = (
+				8CD467852C66530300750ACB /* GistpeekUITests.swift */,
+				8CD467872C66532000750ACB /* GistpeekUITestsLaunchTests.swift */,
+				8C12A4842C668A2B00DEC07A /* gist-peekUITests-Bridging-Header.h */,
 			);
 			path = "gist-peekUITests";
 			sourceTree = "<group>";
@@ -221,14 +246,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		8CF899792C624C71007F3859 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				8CF8997A2C624C9B007F3859 /* RepositoryTests.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		8CF899822C627286007F3859 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,15 +262,6 @@
 				8CF8998C2C62A961007F3859 /* NetworkError.swift */,
 				8CF899882C62A581007F3859 /* Request.swift */,
 				8CF8998A2C62A5EF007F3859 /* Server.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		8CF8998E2C62AB63007F3859 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				8CF899912C62ABC5007F3859 /* MockURLSession.swift */,
-				8CF8998F2C62ABA0007F3859 /* NetworkTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -315,6 +323,9 @@
 				8CF394722C611A830074E83A /* PBXTargetDependency */,
 			);
 			name = "gist-peekTests";
+			packageProductDependencies = (
+				8CE40A752C669B7D0022B486 /* Kingfisher */,
+			);
 			productName = "gist-peekTests";
 			productReference = 8CF394702C611A830074E83A /* gist-peekTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -352,10 +363,12 @@
 					};
 					8CF3946F2C611A830074E83A = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 						TestTargetID = 8CF394592C611A800074E83A;
 					};
 					8CF394792C611A830074E83A = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 						TestTargetID = 8CF394592C611A800074E83A;
 					};
 				};
@@ -467,9 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF899922C62ABC5007F3859 /* MockURLSession.swift in Sources */,
-				8CF899902C62ABA0007F3859 /* NetworkTests.swift in Sources */,
-				8CF8997B2C624C9B007F3859 /* RepositoryTests.swift in Sources */,
+				8CD4678B2C66729000750ACB /* ListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +488,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD467882C66532000750ACB /* GistpeekUITestsLaunchTests.swift in Sources */,
+				8CD467862C66530300750ACB /* GistpeekUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +706,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W24NP433WS;
@@ -702,6 +716,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sucris.gist-peekTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gist-peek.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gist-peek";
@@ -713,6 +728,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W24NP433WS;
@@ -732,6 +748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W24NP433WS;
@@ -740,6 +757,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sucris.gist-peekUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "gist-peekUITests/gist-peekUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "gist-peek";
@@ -750,6 +769,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W24NP433WS;
@@ -758,6 +778,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sucris.gist-peekUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "gist-peekUITests/gist-peekUITests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "gist-peek";
@@ -825,6 +846,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8CE40A752C669B7D0022B486 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CF8996E2C6245B6007F3859 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		8CF8996F2C6245B6007F3859 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8CF8996E2C6245B6007F3859 /* XCRemoteSwiftPackageReference "Kingfisher" */;

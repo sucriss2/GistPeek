@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "2ACEF890-F3F6-4D87-BF50-945A20A71D0A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:gist-peek.xcodeproj",
+      "identifier" : "8CF394592C611A800074E83A",
+      "name" : "gist-peek"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:gist-peek.xcodeproj",
+        "identifier" : "8CF3946F2C611A830074E83A",
+        "name" : "gist-peekTests"
+      }
+    }
+  ],
+  "version" : 1
+}

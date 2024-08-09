@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "5BC397CA-FBFC-4CDC-9119-618FDEC5C887",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:gist-peek.xcodeproj",
+      "identifier" : "8CF394592C611A800074E83A",
+      "name" : "gist-peek"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:gist-peek.xcodeproj",
+        "identifier" : "8CF3946F2C611A830074E83A",
+        "name" : "gist-peekTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:gist-peek.xcodeproj",
+        "identifier" : "8CF394792C611A830074E83A",
+        "name" : "gist-peekUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "D4DC733D-1373-4914-8521-1C19ABE96673",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:gist-peek.xcodeproj",
+        "identifier" : "8CF3946F2C611A830074E83A",
+        "name" : "gist-peekTests"
+      }
+    }
+  ],
+  "version" : 1
+}
