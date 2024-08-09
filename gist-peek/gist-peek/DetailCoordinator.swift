@@ -10,10 +10,12 @@ import UIKit
 final class DetailCoordinator: Coordinator {
     // MARK: - Property(ies).
     var navigationController: UINavigationController
+    private var user: Repository
     
     // MARK: - Initialization.
-    init(navigationController: UINavigationController) {
+    init(user: Repository, navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.user = user
     }
     
     // MARK: - Method(s).
@@ -24,8 +26,10 @@ final class DetailCoordinator: Coordinator {
     func makeViewController() -> DetailViewController {
         let controller = DetailViewController()
         let screen = DetailView()
+        let model = DetailModel(user: user)
         
         controller.screen = screen
+        controller.model = model
         return controller
     }
 }

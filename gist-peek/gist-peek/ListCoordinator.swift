@@ -10,6 +10,7 @@ import UIKit
 final class ListCoordinator: Coordinator {
     // MARK: - Property(ies).
     var navigationController: UINavigationController
+    var childCoordinator: Coordinator?
     
     // MARK: - Initialization.
     init(navigationController: UINavigationController) {
@@ -29,7 +30,16 @@ final class ListCoordinator: Coordinator {
         controller.model = model
         model.service = service
         model.delegate = controller
+        controller.delegate = self
         
         return controller
+    }
+}
+
+extension ListCoordinator: ListViewControllerDelegate {
+    func showDetail(detail: Repository) {
+        let detailCoordinator = DetailCoordinator(user: detail, navigationController: navigationController)
+        detailCoordinator.start()
+        childCoordinator = detailCoordinator
     }
 }

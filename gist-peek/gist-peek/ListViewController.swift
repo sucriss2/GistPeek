@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ListViewControllerDelegate: AnyObject {
+    func showDetail(detail: Repository)
+}
+
 class ListViewController: UIViewController {
     // MARK: - Component(s).
     private lazy var mainView: UIView = {
@@ -44,6 +48,7 @@ class ListViewController: UIViewController {
     var repositories: [Repository] {
         model?.repositories ?? []
     }
+    weak var delegate: ListViewControllerDelegate?
     
     // MARK: - Override(s).
     override func viewDidLoad() {
@@ -130,6 +135,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return makeListCell(tableView, cellForRowAt: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repository = repositories[indexPath.row]
+        delegate?.showDetail(detail: repository)
     }
 }
 

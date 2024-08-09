@@ -30,5 +30,4 @@ final class DetailViewController: UIViewController {
         let url = URL(string: model.image)
         screen?.imageView.kf.setImage(with: url)
     }
-    
 }

@@ -10,7 +10,7 @@ import UIKit
 final class AppCoordinator: Coordinator {
     // MARK: - Property(ies).
     var navigationController: UINavigationController
-    private var listCoordinator: ListCoordinator?
+    private var childCoordinator: ListCoordinator?
     var window: UIWindow?
 
     // MARK: - Initialization.
@@ -29,6 +29,6 @@ final class AppCoordinator: Coordinator {
     private func showLogin() {
         let coordinator = ListCoordinator(navigationController: navigationController)
         coordinator.start()
-        self.listCoordinator = coordinator
+        self.childCoordinator = coordinator
     }
 }
