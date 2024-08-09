@@ -1,5 +1,5 @@
 //
-//  EmptyView.swift
+//  StatusView.swift
 //  gist-peek
 //
 //  Created by Suh on 08/08/24.
@@ -8,7 +8,11 @@
 import Foundation
 import UIKit
 
-final class EmptyView: UIView {
+protocol StatusViewDelegate: AnyObject {
+    func didReloadView()
+}
+
+final class StatusView: UIView {
     
     struct Config {
         let title: String
@@ -68,6 +72,9 @@ final class EmptyView: UIView {
             ),
             for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addAction(UIAction { [weak self] _ in
+            self?.delegate?.didReloadView()
+        }, for: .touchUpInside)
         return view
     }()
 
@@ -85,6 +92,7 @@ final class EmptyView: UIView {
     
     // MARK: - Property(ies).
     let config: Config
+    weak var delegate: StatusViewDelegate?
     
     // MARK: - Initialization.
     init(config: Config) {
@@ -98,7 +106,7 @@ final class EmptyView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Method(s).
+    // MARK: - UIConfigurable.
     private func buidViewHierarchy() {
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(titleLabel)

@@ -26,15 +26,15 @@ class ListViewController: UIViewController {
         return tableView
     }()
     
-    private lazy var emptyView: EmptyView = {
-        let view = EmptyView(config: EmptyView.Config(title: "Não há nada aqui", textInfo: "sua lista de coleção está vazia", buttonTitle: "Atualizar"))
+    private lazy var emptyView: StatusView = {
+        let view = StatusView(config: StatusView.Config(title: "Não há nada aqui", textInfo: "sua lista de coleção está vazia", buttonTitle: "Atualizar"))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var errorConection: EmptyView = {
-        let config = EmptyView.Config(title: "Erro na conexão", textInfo: "Verifique sua rede e tente novamente", image: UIImage(named: "error-connection"), buttonTitle: "Recarregar")
-        let view = EmptyView(config: config)
+    private lazy var errorConection: StatusView = {
+        let config = StatusView.Config(title: "Erro na conexão", textInfo: "Verifique sua rede e tente novamente", image: UIImage(named: "error-connection"), buttonTitle: "Recarregar")
+        let view = StatusView(config: config)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -54,6 +54,8 @@ class ListViewController: UIViewController {
         configTableView()
         configConstraints()
         model?.load()
+        emptyView.delegate = self
+        errorConection.delegate = self
     }
     
     // MARK: - Method(s).
@@ -157,5 +159,13 @@ extension UIView {
             trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+}
+
+extension ListViewController: StatusViewDelegate {
+    func didReloadView() {
+        DispatchQueue.main.async {
+            self.model?.load()
+        }
     }
 }
